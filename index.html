@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNKNOWN FILE 007</title>
+<style>
+body {
+  background: #020604;
+  color: #00ff66;
+  font-family: monospace;
+  text-align: center;
+  padding: 50px 15px;
+}
+.box {
+  max-width: 420px;
+  margin: auto;
+  border: 1px solid #00ff66;
+  padding: 25px;
+  box-shadow: 0 0 20px #004d20;
+}
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  margin-top: 14px;
+  background: #020604;
+  color: #00ff66;
+  border: 1px solid #00ff66;
+  font-family: monospace;
+}
+button { cursor: pointer; }
+#secret { display: none; }
+#error { color: #ff4444; }
+</style>
+</head>
+<body>
+<div class="box">
+  <p>/SYSTEM/ v1.0.7</p>
+  <h1>UNKNOWN FILE 007</h1>
+  <p>CLASSIFIED ACCESS ONLY</p>
+  <p>Some secrets are better left unknown.</p>
+
+  <input id="pass" type="password"
+  placeholder="Enter access code">
+
+  <button onclick="unlock()">ACCESS FILE →</button>
+  <p id="error"></p>
+
+  <div id="secret">
+    <h2>ACCESS GRANTED</h2>
+    <p>The signal was never lost.</p>
+    <p>You have reached the beginning.</p>
+    <p>THE SHADOW NEVER SLEEPS.</p>
+  </div>
+</div>
+
+<script>
+function unlock() {
+  const code = document.getElementById("pass").value.trim();
+
+  if (code === "NIGHT007") {
+    document.getElementById("secret").style.display = "block";
+    document.getElementById("error").textContent = "";
+  } else {
+    document.getElementById("error").textContent =
+      "ACCESS DENIED";
+  }
+}
+</script>
+</body>
+</html>
